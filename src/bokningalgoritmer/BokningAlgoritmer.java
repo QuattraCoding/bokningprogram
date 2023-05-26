@@ -156,12 +156,14 @@ public class BokningAlgoritmer {
                                 System.out.println("Kön: Annat");
                             default ->
                                 System.out.println("inget kön angivet");
+                                
                         }
-                        validP = false;
-                    } else {
+                        
+                }
+                    else {
                         System.out.println("personnumret eller namnet hittades inte, försök igen.");
                     }
-                }
+                } 
 
             } else if (infoinput.matches("\\D+") && infoinput.equalsIgnoreCase("back")) {
 
@@ -201,9 +203,6 @@ public class BokningAlgoritmer {
         mswitch();
     }
 
-    /**
-     * @return
-     */
     public static int verification() {
         //For-loop som kollar om friplatsArray[nummer] == false
 
