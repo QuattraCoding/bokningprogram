@@ -6,11 +6,11 @@ import java.time.LocalDate;
 public class BokningAlgoritmer {
 
     static Scanner Scan = new Scanner(System.in);
-    static boolean on = true;
-    static boolean menu = true;
-    static boolean book = false;
-    static boolean cancel = false;
-    static boolean info = false;
+    private static boolean on = true;
+    private static boolean menu = true;
+    private static boolean book = false;
+    private static boolean cancel = false;
+    private static boolean info = false;
 
     static boolean[] verarray = {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false};
     static String[] personnumber = new String[15];
@@ -43,7 +43,7 @@ public class BokningAlgoritmer {
         while (on) {
 
             if (menu) {
-                System.out.println("välkommen till menyn, 1: Boka 2: Info 3: Stäng av");
+                System.out.println("välkommen till menyn, 1: Boka 2: Info 3: avboka 4: stäng av.");
 
                 int val = Scan.nextInt();
                 switch (val) {
@@ -115,7 +115,7 @@ public class BokningAlgoritmer {
         personnumber[tempN] = personn;
         while (validP) {
             if (personn.length() != 8) {
-                System.out.println("Personummer utan dina personliga siffror: (yyymmdd) ");
+                System.out.println("Personummer utan dina personliga siffror: (yyyymmdd) ");
                 personn = Scan.next();
             } else {
                 validP = false;
@@ -236,9 +236,6 @@ public class BokningAlgoritmer {
         detta räknar ut en variabel som lägger ett pris på biljetten
         
          */
-        stryear = stryear.replace("0", "");
-        strmonth = strmonth.replace("0", "");
-        strday = strday.replace("0", "");
         year = Integer.parseInt(stryear);
         month = Integer.parseInt(strmonth);
         day = Integer.parseInt(strday);
